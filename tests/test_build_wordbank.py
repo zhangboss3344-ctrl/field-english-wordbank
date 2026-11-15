@@ -53,9 +53,9 @@ class BuildWordbankTests(unittest.TestCase):
                 }
             self.assertEqual(len(words), len(rows))
             self.assertTrue(curated_words.issubset(words))
-            self.assertIn("BGP peer", words)
+            self.assertIn("bgp peer", words)
             self.assertEqual(len(words - curated_words), 4)
-            self.assertIn("The BGP session is established.", words)
+            self.assertIn("the bgp session is established.", words)
 
             built_manifest = json.loads(manifest.read_text(encoding="utf-8"))
             self.assertEqual(built_manifest["content"]["count"], len(rows))
