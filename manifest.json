@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "app": "Field English",
+  "channel": "stable",
+  "version": "1.0.0",
+  "version_code": 1,
+  "updated_at": "2026-11-15T00:00:00Z",
+  "description": "首发专业数通工程英语词库",
+  "locale": "zh-CN",
+  "content": {
+    "type": "csv",
+    "file_name": "field_english_words.csv",
+    "url": "https://raw.githubusercontent.com/zhangboss3344-ctrl/field-english-wordbank/main/field_english_words.csv",
+    "encoding": "UTF-8",
+    "delimiter": ",",
+    "header": [
+      "index",
+      "英文",
+      "中文",
+      "分类",
+      "备注"
+    ],
+    "count": 125,
+    "size_bytes": 10490,
+    "sha256": "8d67be9f32605da5a4b0cc1c4d2019f9915cd7d160f9ba1aae587e2000aacd88"
+  },
+  "update_policy": {
+    "check_on_start": true,
+    "allow_manual_check": true,
+    "download_only_if_newer": true,
+    "verify_sha256": true,
+    "verify_size": true,
+    "atomic_replace": true,
+    "preserve_user_favorites": true,
+    "preserve_learning_progress": true,
+    "offline_fallback": true
+  },
+  "minimum_client_version": "1.0.0"
+}
