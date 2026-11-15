@@ -124,3 +124,226 @@ index,英文,中文,分类,备注
 122,estimated time of restoration,预计恢复时间,现场沟通,向客户说明预计业务恢复时间
 123,action item,待办事项,现场沟通,明确任务内容负责人和完成时间
 124,acceptance sign-off,验收签字确认,现场沟通,由客户或项目责任方确认验收结果
+125,Autonomous System (AS),自治系统,路由协议,由单一管理机构控制并采用统一路由策略的网络；例：The two networks belong to different autonomous systems.
+126,external BGP (eBGP),外部边界网关协议,路由协议,用于不同自治系统之间交换路由信息；例：The eBGP session is established between the two ASes.
+127,internal BGP (iBGP),内部边界网关协议,路由协议,用于同一自治系统内部传播BGP路由。
+128,BGP peer group,BGP邻居组,路由协议,用于对多个BGP邻居复用相同配置；例：All peers belong to the same peer group.
+129,BGP route advertisement,BGP路由通告,路由协议,向BGP邻居发布可达路由；例：The route is not being advertised to the peer.
+130,route withdrawal,路由撤销,路由协议,撤销此前向邻居通告的路由。
+131,BGP update message,BGP更新报文,路由协议,承载路由新增、更新或撤销信息。
+132,BGP keepalive message,BGP保活报文,路由协议,用于维持BGP邻居会话。
+133,BGP hold timer,BGP保持定时器,路由协议,在规定时间内未收到有效报文时可能导致会话中断。
+134,maximum-prefix limit,最大前缀数量限制,路由协议,限制从邻居接收的路由前缀数量；例：The maximum-prefix limit has been reached.
+135,BGP route selection,BGP路由优选,路由协议,根据路径属性和厂商规则选择最佳路由。
+136,route preference,路由优先级,路由协议,部分厂商用于比较不同路由来源的优先级；需结合设备术语理解。
+137,routing information base (RIB),路由信息库,路由协议,保存控制平面学习到的路由信息。
+138,forwarding information base (FIB),转发信息库,路由协议,供数据平面进行快速报文转发查表。
+139,recursive route lookup,递归路由查找,路由协议,通过下一跳解析获得实际出接口或下一跳。
+140,route summarization,路由汇总,路由协议,将多条明细路由聚合为较短的前缀。
+141,default route,默认路由,路由协议,在没有更精确匹配路由时使用的路由。
+142,static route,静态路由,路由协议,由管理员手动配置的路由。
+143,policy-based routing (PBR),策略路由,路由协议,根据源地址、应用或其他条件指定转发路径。
+144,OSPF neighbor state,OSPF邻居状态,路由协议,用于判断邻居关系是否正常建立；例：The neighbor state is stuck in ExStart.
+145,designated router (DR),指定路由器,路由协议,OSPF广播网络中负责部分邻接和LSA交换的设备。
+146,backup designated router (BDR),备份指定路由器,路由协议,在DR失效时接替其职责的设备。
+147,OSPF network type,OSPF网络类型,路由协议,影响邻居发现、DR选举和报文交互方式。
+148,link-state PDU (LSP),链路状态报文,路由协议,IS-IS用于传播链路状态信息的协议数据单元。
+149,IS-IS Level-1,IS-IS一级路由级别,路由协议,负责区域内路由信息交换。
+150,IS-IS Level-2,IS-IS二级路由级别,路由协议,负责不同区域之间的路由信息交换。
+151,wide metric,宽度量值,路由协议,IS-IS扩展度量方式，可支持更大的度量值范围。
+152,route metric,路由度量值,路由协议,用于衡量路由路径的代价，具体算法取决于协议。
+153,administrative distance,管理距离,路由协议,用于比较不同路由协议来源的可信度，常见于部分厂商术语。
+154,next-hop reachability,下一跳可达性,路由协议,确认路由下一跳是否能够递归解析并正常到达。
+155,route redistribution,路由引入,路由协议,在不同路由协议或路由实例之间引入路由。
+156,route filtering,路由过滤,路由协议,按策略控制路由的接收、发布或引入。
+157,route aggregation,路由聚合,路由协议,将多个路由前缀合并为聚合路由。
+158,BGP Link-State (BGP-LS),BGP链路状态扩展,路由协议,通过BGP传播网络拓扑和链路属性信息。
+159,BFD session,BFD会话,路由协议,用于快速检测转发路径或邻接故障；例：The BFD session went Down.
+160,fast reroute (FRR),快速重路由,路由协议,故障发生时快速切换到预先计算或配置的保护路径。
+161,link protection,链路保护,路由协议,针对单条链路故障提供备份转发路径。
+162,node protection,节点保护,路由协议,针对中间节点故障提供绕行保护路径。
+163,traffic engineering (TE),流量工程,路由协议,根据带宽、时延或策略约束优化流量路径。
+164,label stack,标签栈,MPLS/SRv6,报文中按层次排列的多个MPLS标签。
+165,label push,压入标签,MPLS/SRv6,在报文转发过程中增加MPLS标签。
+166,label swap,交换标签,MPLS/SRv6,转发节点用新标签替换入标签。
+167,label pop,弹出标签,MPLS/SRv6,从报文中移除MPLS标签。
+168,penultimate hop popping (PHP),倒数第二跳弹出,MPLS/SRv6,由倒数第二跳提前弹出外层标签。
+169,explicit null label,显式空标签,MPLS/SRv6,用于要求倒数第二跳保留特定标签语义的场景。
+170,LDP neighbor,LDP邻居,MPLS/SRv6,与本设备建立标签分发关系的对端设备。
+171,LDP session,LDP会话,MPLS/SRv6,用于在LDP邻居之间维护标签分发连接。
+172,LSP ping,LSP连通性检测,MPLS/SRv6,用于验证MPLS标签交换路径是否可达。
+173,LSP traceroute,LSP路径跟踪,MPLS/SRv6,逐跳检查MPLS标签交换路径。
+174,RSVP-TE tunnel,RSVP-TE流量工程隧道,MPLS/SRv6,通过RSVP信令建立带约束的MPLS TE隧道。
+175,constraint-based shortest path first (CSPF),基于约束的最短路径优先算法,MPLS/SRv6,根据带宽和链路属性等约束计算TE路径。
+176,bandwidth reservation,带宽预留,MPLS/SRv6,为指定隧道或业务预留链路资源。
+177,VPNv4 route,VPNv4路由,MPLS/SRv6,携带RD和VPN路由信息的IPv4 VPN路由。
+178,VPNv6 route,VPNv6路由,MPLS/SRv6,用于承载IPv6 VPN路由信息。
+179,route distinguisher (RD),路由区分符,MPLS/SRv6,使不同VPN中的相同IPv4或IPv6前缀能够区分。
+180,route target (RT),路由目标,MPLS/SRv6,控制VPN路由的导入和导出策略。
+181,virtual routing and forwarding (VRF),虚拟路由转发实例,MPLS/SRv6,在同一设备上隔离多个独立路由表。
+182,provider edge (PE) router,运营商边缘路由器,MPLS/SRv6,连接运营商骨干网与客户网络的边缘设备。
+183,customer edge (CE) router,客户边缘路由器,MPLS/SRv6,连接客户网络与运营商PE设备的路由器。
+184,provider (P) router,运营商核心路由器,MPLS/SRv6,位于运营商网络核心区域的转发设备。
+185,Segment Routing Global Block (SRGB),段路由全局标签块,MPLS/SRv6,用于分配全局可识别的Prefix-SID标签范围。
+186,Segment Routing Local Block (SRLB),段路由本地标签块,MPLS/SRv6,用于分配本地有效的SID标签范围。
+187,Prefix-SID,前缀段标识符,MPLS/SRv6,标识到达某个路由前缀的段。
+188,Adjacency SID (Adj-SID),邻接段标识符,MPLS/SRv6,标识一条特定出接口或邻接链路。
+189,Binding SID (BSID),绑定段标识符,MPLS/SRv6,用于将一个段路由策略绑定到特定SID。
+190,segment list,段列表,MPLS/SRv6,按顺序定义流量需要经过的段序列。
+191,candidate path,候选路径,MPLS/SRv6,SR Policy下可供选择的一条候选路径。
+192,SRv6 behavior,SRv6转发行为,MPLS/SRv6,定义设备收到特定SID报文后执行的处理动作。
+193,BGP color extended community,BGP颜色扩展团体属性,MPLS/SRv6,用于将业务流量与特定SR Policy颜色关联。
+194,service SID,业务SID,MPLS/SRv6,用于标识SRv6 VPN等业务处理行为。
+195,locator block,Locator块,MPLS/SRv6,SRv6 Locator地址结构中的网络标识部分。
+196,local SID table,本地SID表,MPLS/SRv6,保存设备本地SID及其对应处理行为。
+197,Clos network,Clos网络架构,数据中心,通过多级交换结构构建可扩展的数据中心网络。
+198,leaf-spine fabric,Leaf-Spine交换网络,数据中心,由Leaf和Spine交换机组成的Clos网络结构。
+199,oversubscription ratio,超售比,数据中心,上联总带宽与下联总带宽之间的比例指标。
+200,north-south traffic,南北向流量,数据中心,数据中心内部与外部网络之间的流量。
+201,non-blocking fabric,无阻塞交换网络,数据中心,在设计容量范围内避免交换结构成为带宽瓶颈。
+202,border leaf,边界Leaf交换机,数据中心,负责数据中心Fabric与外部网络互联的Leaf设备。
+203,service leaf,业务Leaf交换机,数据中心,连接特定业务或服务资源的Leaf设备。
+204,super-spine,超级Spine交换机,数据中心,在多平面或多级Clos架构中连接多个Spine层。
+205,dual-homing,双归属接入,数据中心,通过两条独立链路或设备实现冗余接入。
+206,multi-chassis link aggregation (MLAG),跨设备链路聚合,数据中心,允许下联设备通过跨两台交换机的聚合链路接入。
+207,EVPN multihoming,EVPN多归属,数据中心,通过EVPN机制实现终端多设备冗余接入。
+208,BGP underlay,BGP底层网络,数据中心,使用BGP构建数据中心底层IP可达网络。
+209,VXLAN tunnel endpoint,VXLAN隧道端点,数据中心,负责VXLAN报文封装与解封装的设备或逻辑实体。
+210,distributed anycast gateway,分布式任播网关,数据中心,在多个Leaf上提供相同网关地址以实现就近转发。
+211,VNI mapping,VNI映射,数据中心,将VLAN或租户网络映射到VXLAN网络标识符。
+212,RDMA network adapter,RDMA网卡,数据中心,支持远程直接内存访问的网络适配器。
+213,lossless Ethernet,无损以太网,数据中心,通过流控和拥塞管理降低特定流量的丢包。
+214,PFC deadlock,PFC死锁,数据中心,优先级流控配置不当可能导致流量长期阻塞。
+215,ECN marking,ECN拥塞标记,数据中心,在IP报文中标记拥塞状态以触发端侧反馈。
+216,Data Center Quantized Congestion Notification (DCQCN),数据中心量化拥塞通知机制,数据中心,RoCEv2常用的端到端拥塞控制机制。
+217,Data Center Bridging Exchange (DCBX),数据中心桥接交换协议,数据中心,用于交换数据中心桥接相关配置能力。
+218,Enhanced Transmission Selection (ETS),增强型传输选择,数据中心,用于按流量类别分配带宽资源。
+219,microburst,微突发流量,数据中心,短时间内出现的高强度流量突发，可能造成队列丢包。
+220,incast traffic,汇聚型突发流量,数据中心,多个发送端同时向单一接收端发送数据造成瞬时拥塞。
+221,buffer occupancy,缓存占用量,数据中心,用于观察交换芯片队列缓存使用情况。
+222,congestion notification,拥塞通知,数据中心,向发送端反馈网络拥塞状态。
+223,adaptive routing,自适应路由,数据中心,根据实时网络状态动态选择转发路径。
+224,packet spraying,报文喷洒式负载分担,数据中心,将报文分散到多条路径以提高链路利用率。
+225,streaming telemetry,流式遥测,数据中心,持续推送设备运行和网络状态数据。
+226,gRPC Network Management Interface (gNMI),gNMI网络管理接口,数据中心,基于gRPC的网络配置与遥测接口。
+227,in-band network telemetry (INT),带内网络遥测,数据中心,在数据包中携带网络路径和设备状态信息。
+228,telemetry collector,遥测采集器,数据中心,接收、汇聚和处理设备上报的遥测数据。
+229,GPU compute node,GPU计算节点,数据中心,部署GPU并承担计算任务的服务器节点。
+230,GPU interconnect,GPU互联,数据中心,连接GPU或GPU服务器的高速互联技术。
+231,compute fabric,计算网络Fabric,数据中心,为计算节点提供高速互联的网络基础设施。
+232,storage fabric,存储网络Fabric,数据中心,连接服务器与存储系统的专用或共享网络。
+233,cluster management network,集群管理网络,数据中心,用于服务器管理、监控和集群控制的网络。
+234,link utilization,链路利用率,故障处理,链路实际流量相对于可用带宽的比例。
+235,bandwidth utilization,带宽利用率,故障处理,用于判断链路是否接近容量上限。
+236,input drops,入方向丢弃,故障处理,检查设备接收方向队列或接口丢弃计数。
+237,output drops,出方向丢弃,故障处理,检查设备发送方向队列拥塞或丢弃计数。
+238,packet discard,报文丢弃,故障处理,设备因策略、资源或错误条件丢弃报文。
+239,frame check sequence (FCS) error,帧校验序列错误,故障处理,通常需要结合物理链路和接口统计定位原因。
+240,symbol error,符号错误,故障处理,物理层符号解码异常，可能与链路质量有关。
+241,digital optical monitoring (DOM),数字光学监控,故障处理,读取光模块温度、电压、偏置电流和收发光功率。
+242,optical receive power,接收光功率,故障处理,检查接收端光功率是否处于模块规格范围。
+243,optical transmit power,发送光功率,故障处理,检查发送端光功率是否符合模块规格。
+244,low receive power alarm,接收光功率低告警,故障处理,检查光纤连接、衰耗、模块和对端发送功率。
+245,bit error rate (BER),误码率,故障处理,衡量传输过程中错误比特所占比例。
+246,bit error rate test (BERT),误码率测试,故障处理,通过专用测试仪器评估链路误码性能。
+247,CPU utilization,CPU利用率,故障处理,检查设备控制平面处理器负载是否异常升高。
+248,memory utilization,内存利用率,故障处理,检查内存占用和是否存在持续增长。
+249,control plane,控制平面,故障处理,负责协议运行、路由计算和控制信息处理。
+250,data plane,数据平面,故障处理,负责根据转发表执行报文转发。
+251,control plane policing (CoPP),控制平面保护策略,故障处理,限制送往控制平面的报文速率以保护设备。
+252,MTU mismatch,MTU不匹配,故障处理,链路两端MTU设置不一致可能导致大报文异常。
+253,asymmetric routing,非对称路由,故障处理,双向流量经过不同网络路径的现象。
+254,traffic black hole,流量黑洞,故障处理,流量被错误转发或丢弃，无法到达目的地。
+255,intermittent packet loss,间歇性丢包,故障处理,丢包并非持续发生，需要结合时间和流量特征分析。
+256,network bottleneck,网络瓶颈,故障处理,限制端到端吞吐量或性能的网络环节。
+257,congestion point,拥塞点,故障处理,流量集中并出现排队或丢弃的网络位置。
+258,end-to-end connectivity test,端到端连通性测试,故障处理,验证源端到目的端的完整通信路径。
+259,loopback test,环回测试,故障处理,通过环回方式验证接口或链路的收发能力。
+260,fault isolation,故障隔离,故障处理,逐步缩小范围并定位故障所在设备或链路。
+261,reproduce the issue,复现问题,故障处理,在可控条件下重新触发异常以便分析。
+262,narrow down the fault,缩小故障范围,故障处理,通过逐段排查确定可能的故障区间。
+263,compare the counters,对比计数器,故障处理,比较故障前后接口和队列统计的变化。
+264,traffic baseline,流量基线,故障处理,用于与当前流量和性能数据进行对比的参考值。
+265,impact assessment,影响评估,故障处理,明确故障影响的客户、业务、区域和持续时间。
+266,corrective action,纠正措施,故障处理,针对已发现问题采取的修复措施。
+267,preventive action,预防措施,故障处理,为避免同类问题再次发生而采取的措施。
+268,incident timeline,故障时间线,故障处理,按时间记录发现、升级、定位、恢复等关键节点。
+269,service restoration,业务恢复,故障处理,将受影响业务恢复到可用状态。
+270,root cause analysis (RCA),根因分析,故障处理,分析故障发生的根本原因及其触发条件。
+271,post-incident review,故障复盘,故障处理,故障恢复后回顾过程、影响和改进措施。
+272,mean time to repair (MTTR),平均修复时间,故障处理,衡量从故障发生到修复所需的平均时间。
+273,mean time to detect (MTTD),平均检测时间,故障处理,衡量从故障发生到被发现所需的平均时间。
+274,service availability,业务可用性,故障处理,衡量服务在指定时间内可正常使用的程度。
+275,interface statistics,接口统计信息,故障处理,包括流量、错误、丢弃和状态变化等计数。
+276,debug log,调试日志,故障处理,记录协议或功能模块的详细运行信息。
+277,protocol state,协议状态,故障处理,描述协议邻居、会话或状态机当前所处阶段。
+278,control-plane convergence,控制平面收敛,故障处理,网络变化后控制平面重新计算并稳定的过程。
+279,packet forwarding path,报文转发路径,故障处理,报文从入口到出口实际经过的转发路径。
+280,route lookup failure,路由查找失败,故障处理,设备未能为报文找到有效的转发路由。
+281,project kickoff,项目启动会,工程建设,明确项目范围、目标、人员分工和里程碑。
+282,site readiness,站点就绪情况,工程建设,确认机房、电源、接地、空间和环境满足施工条件。
+283,site acceptance,站点验收,工程建设,按标准检查站点施工和交付情况。
+284,material delivery,材料交付,工程建设,确认设备、模块、线缆和辅材到货情况。
+285,rack mounting,机柜安装,工程建设,将设备固定安装到指定机柜位置。
+286,cable routing,线缆布放,工程建设,按设计路径敷设电源线、网线或光纤。
+287,cable termination,线缆端接,工程建设,完成线缆两端连接和端接处理。
+288,fiber cleaning,光纤端面清洁,工程建设,连接前清洁光纤连接器端面以减少污染和损耗。
+289,optical link test,光链路测试,工程建设,测试光链路连通性、光功率和传输质量。
+290,power-on procedure,上电流程,工程建设,按顺序检查电源并执行设备上电操作。
+291,initial configuration,初始配置,工程建设,设备首次部署时进行的基础配置。
+292,commissioning checklist,开通调测检查表,工程建设,记录设备开通前后必须完成的检查项目。
+293,integration testing,集成测试,工程建设,验证新设备与现网及其他系统的协同工作能力。
+294,cutover rehearsal,割接演练,工程割接,正式割接前模拟执行步骤并验证回退方案。
+295,change freeze,变更冻结期,工程割接,在指定时间段内暂停非必要网络变更。
+296,outage notification,业务中断通知,工程割接,提前告知客户和相关团队计划中的业务中断。
+297,go/no-go decision,执行或暂停决策,工程割接,根据前置条件决定是否按计划开始变更。
+298,rollback criteria,回退判据,工程割接,明确触发回退的业务、性能或时间条件。
+299,rollback procedure,回退操作流程,工程割接,按预定步骤恢复原配置、原链路或原业务路径。
+300,change record,变更记录,工程割接,记录变更原因、范围、步骤、审批和验证结果。
+301,implementation window,实施窗口,工程割接,项目或变更允许执行操作的时间范围。
+302,punch list,遗留问题清单,工程建设,记录验收或交付前仍需整改的事项。
+303,handover package,移交资料包,工程建设,交付给运维团队的配置、拓扑、测试和维护资料。
+304,as-built drawing,竣工图,工程建设,反映项目实际安装和最终线路情况的图纸。
+305,acceptance criteria,验收标准,工程建设,判断工程或功能是否满足交付要求的条件。
+306,test report,测试报告,工程建设,记录测试环境、步骤、结果和结论的文档。
+307,project milestone,项目里程碑,工程建设,项目计划中的关键阶段或交付节点。
+308,work permit,施工许可证,工程建设,在受控现场开展施工或操作所需的许可文件。
+309,risk mitigation,风险缓解措施,工程建设,降低项目实施风险发生概率或影响程度的措施。
+310,on-site support,现场支持,现场沟通,工程师在项目现场提供技术支持。
+311,remote support,远程支持,现场沟通,通过远程连接或电话协助现场团队处理问题。
+312,vendor coordination,供应商协调,现场沟通,协调设备供应商、集成商和现场团队的工作。
+313,customer confirmation,客户确认,现场沟通,取得客户对范围、窗口、结果或结论的确认。
+314,The BGP session is established.,BGP会话已经建立。,故障处理口语,用于汇报BGP邻居状态正常。
+315,The BGP session is stuck in Active state.,BGP会话一直停留在Active状态。,故障处理口语,用于描述BGP邻居无法正常建立。
+316,The route is not being advertised to the peer.,这条路由没有通告给对端邻居。,故障处理口语,可继续说明需要检查路由策略和发布条件。
+317,We are seeing packet loss on the uplink.,我们发现上联链路存在丢包。,故障处理口语,用于向客户或协作团队描述现象。
+318,The optical receive power is below the threshold.,接收光功率低于阈值。,故障处理口语,用于描述光功率告警或链路质量问题。
+319,Please check the interface error counters.,请检查接口错误计数器。,故障处理口语,请求对端提供接口错误和丢弃统计。
+320,Could you share the latest device logs?,可以分享最新的设备日志吗？,故障处理口语,请求对端提供故障时段的设备日志。
+321,Please run a ping test from both ends.,请从两端分别执行Ping测试。,故障处理口语,用于验证双向连通性。
+322,We have isolated the fault to the uplink interface.,我们已将故障定位到上联接口。,故障处理口语,汇报当前故障定位结论。
+323,The service has been restored.,业务已经恢复。,故障处理口语,用于确认业务恢复。
+324,We will monitor the network for the next 30 minutes.,接下来30分钟我们会持续监控网络。,故障处理口语,说明恢复后的观察安排。
+325,The root cause is still under investigation.,根本原因仍在调查中。,故障处理口语,用于说明尚未完成根因分析。
+326,We will provide the next update in 15 minutes.,我们将在15分钟后提供下一次进展更新。,现场沟通,用于约定下一次状态同步时间。
+327,All pre-checks have been completed.,所有操作前检查均已完成。,工程割接口语,用于割接前汇报检查结果。
+328,We are ready to start the cutover.,我们已准备好开始割接。,工程割接口语,开始割接前向相关方确认状态。
+329,Traffic has been switched to the new path.,流量已经切换到新路径。,工程割接口语,用于汇报流量切换结果。
+330,No service interruption has been observed.,目前未观察到业务中断。,工程割接口语,用于割接过程中的业务状态汇报。
+331,We need your approval before proceeding.,继续执行前需要取得您的批准。,现场沟通,用于要求客户或变更负责人授权。
+332,Please confirm the maintenance window.,请确认维护窗口。,工程割接口语,用于确认计划操作时间。
+333,The rollback threshold has been reached.,已经达到回退阈值。,工程割接口语,用于说明需要按预案执行回退。
+334,We have restored the original configuration.,我们已经恢复原始配置。,工程割接口语,用于汇报配置回退完成。
+335,The acceptance test has passed.,验收测试已经通过。,工程建设口语,用于汇报测试结果。
+336,Please sign off the test report.,请在测试报告上签字确认。,工程建设口语,用于请求客户完成验收确认。
+337,The site is not ready for commissioning.,该站点尚不具备开通调测条件。,工程建设口语,用于反馈现场准备条件不足。
+338,We are waiting for the power supply to be available.,我们正在等待供电条件具备。,工程建设口语,用于说明施工依赖条件。
+339,The issue is affecting multiple sites.,该问题正在影响多个站点。,故障处理口语,用于说明故障影响范围。
+340,The impact is limited to one service.,影响范围仅限于一项业务。,故障处理口语,用于说明业务影响边界。
+341,We need to escalate this incident to the backbone team.,我们需要将此故障升级给骨干网团队。,现场沟通,用于跨团队升级处理。
+342,"The issue has been mitigated, but not fully resolved.",问题影响已得到缓解，但尚未彻底解决。,故障处理口语,区分临时恢复与根因修复。
+343,We need a permanent fix.,我们需要一个永久性解决方案。,故障处理口语,用于要求制定彻底修复措施。
+344,The packet loss has returned to normal.,丢包情况已经恢复正常。,故障处理口语,用于汇报性能指标恢复。
+345,The link utilization is approaching the threshold.,链路利用率正在接近阈值。,故障处理口语,用于提前提示容量风险。
+346,The BGP routes have converged.,BGP路由已经收敛。,故障处理口语,用于确认路由状态趋于稳定。
+347,We are checking the end-to-end path.,我们正在检查端到端路径。,故障处理口语,用于说明正在开展路径排查。
