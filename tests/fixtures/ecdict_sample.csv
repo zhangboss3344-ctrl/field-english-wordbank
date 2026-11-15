@@ -1,0 +1,7 @@
+word,phonetic,definition,translation,pos,collins,oxford,tag,bnc,frq,exchange,detail,audio
+network,ˈnetwɜːk,"a group of connected computers or people",网络,n,5,1,cet4,500,800,,"",""
+router,ˈruːtə(r),"a device that forwards data packets",路由器,n,4,1,cet4,1800,1200,,"",""
+hello,həˈləʊ,"used as a greeting",你好,interj,5,1,cet4,300,200,,"",""
+cloud computing,,"the delivery of computing services over the internet",云计算,n,,0,ielts,0,0,,"",""
+rareword,,"an uncommon word",罕见词,n,,0,,90000,95000,,"",""
+BGP peer,,"a BGP neighbor",BGP对等体,n,,0,,0,0,,"",""
