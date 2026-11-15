@@ -1,0 +1,126 @@
+index,英文,中文,分类,备注
+0,BGP peer,BGP对等体,路由协议,用于建立BGP会话
+1,The interface is down.,接口处于Down状态,故障处理,可用于维护窗口的故障口语表达
+2,optical power,光功率,光传输,Check the optical power before replacing the module.
+3,rollback plan,回退方案,工程割接,Prepare a rollback plan before the change.
+4,site survey,现场勘察,工程建设,We will conduct the site survey tomorrow.
+5,BGP session,BGP会话,路由协议,用于描述两个BGP邻居之间的会话状态
+6,route reflector,路由反射器,路由协议,用于减少IBGP全互联需求
+7,route policy,路由策略,路由协议,用于控制路由的接收发布和属性修改
+8,prefix list,前缀列表,路由协议,用于按IP前缀匹配路由
+9,AS path,AS路径,路由协议,用于记录路由经过的自治系统
+10,local preference,本地优先级,路由协议,用于控制AS内部的出口选路
+11,next hop,下一跳,路由协议,检查路由下一跳是否可达
+12,route flap,路由震荡,路由协议,描述路由频繁撤销和重新发布
+13,route convergence,路由收敛,路由协议,描述网络拓扑变化后路由恢复稳定的过程
+14,graceful restart,平滑重启,路由协议,在协议进程重启期间尽量保持转发
+15,BGP community,BGP团体属性,路由协议,用于对路由进行分类和策略控制
+16,OSPF adjacency,OSPF邻接关系,路由协议,确认邻居状态是否达到Full
+17,OSPF area,OSPF区域,路由协议,用于划分OSPF路由域
+18,backbone area,骨干区域,路由协议,OSPF区域0负责连接其他区域
+19,area border router,区域边界路由器,路由协议,连接多个OSPF区域的路由器
+20,link-state advertisement,链路状态通告,路由协议,LSA用于描述链路状态信息
+21,link-state database,链路状态数据库,路由协议,保存区域内的链路状态信息
+22,SPF calculation,最短路径优先计算,路由协议,根据链路状态数据库计算最短路径
+23,IS-IS adjacency,IS-IS邻接关系,路由协议,检查Level-1或Level-2邻居状态
+24,NET address,网络实体名称,路由协议,用于标识IS-IS路由器
+25,overload bit,过载位,路由协议,避免其他设备优先选择本设备作为 transit 节点
+26,route leaking,路由泄漏,路由协议,在不同路由级别或实例间引入指定路由
+27,MPLS label,MPLS标签,MPLS/SRv6,用于MPLS数据转发
+28,label switched path,标签交换路径,MPLS/SRv6,数据包沿标签交换路径转发
+29,Label Distribution Protocol,标签分发协议,MPLS/SRv6,用于分发MPLS标签
+30,RSVP-TE,基于RSVP的流量工程,MPLS/SRv6,用于建立显式流量工程隧道
+31,SR-MPLS,基于MPLS的数据段路由,MPLS/SRv6,通过标签栈承载Segment信息
+32,SRv6,IPv6段路由,MPLS/SRv6,基于IPv6扩展头实现源路由
+33,Segment Identifier,段标识符,MPLS/SRv6,SID用于标识一个段或网络指令
+34,SRv6 locator,SRv6定位器,MPLS/SRv6,用于分配和聚合本地SID地址空间
+35,End.DT4,IPv4 VPN解封装行为,MPLS/SRv6,用于SRv6 VPN场景下的IPv4报文解封装
+36,End.DT6,IPv6 VPN解封装行为,MPLS/SRv6,用于SRv6 VPN场景下的IPv6报文解封装
+37,SR policy,段路由策略,MPLS/SRv6,用于指定流量经过的段列表
+38,TI-LFA,拓扑无关快速重路由,MPLS/SRv6,用于链路或节点故障时快速保护
+39,EVPN,以太网VPN,EVPN/VXLAN,常用于数据中心二层和三层互联
+40,VXLAN,虚拟可扩展局域网,EVPN/VXLAN,通过UDP封装扩展二层网络
+41,VTEP,VXLAN隧道端点,EVPN/VXLAN,负责VXLAN报文封装和解封装
+42,VNI,VXLAN网络标识符,EVPN/VXLAN,用于标识一个VXLAN二层或三层网络
+43,EVPN route type 2,EVPN二类路由,EVPN/VXLAN,用于MAC和IP地址可达信息通告
+44,EVPN route type 5,EVPN五类路由,EVPN/VXLAN,用于IP前缀路由通告
+45,anycast gateway,任播网关,EVPN/VXLAN,多台设备使用相同网关地址提供冗余
+46,MAC mobility,MAC移动,EVPN/VXLAN,用于检测终端在不同VTEP之间迁移
+47,underlay network,底层承载网络,EVPN/VXLAN,为Overlay隧道提供IP可达性
+48,overlay network,覆盖网络,EVPN/VXLAN,在底层网络之上构建逻辑网络
+49,VLAN,虚拟局域网,交换与QoS,用于隔离二层广播域
+50,QinQ,双层VLAN标签,交换与QoS,通过外层标签承载用户VLAN
+51,trunk port,干道端口,交换与QoS,允许多个VLAN通过同一链路
+52,access port,接入端口,交换与QoS,通常承载一个用户VLAN
+53,LACP,链路聚合控制协议,交换与QoS,用于协商和维护链路聚合
+54,Eth-Trunk,以太网链路聚合,交换与QoS,提高带宽并提供链路冗余
+55,BFD,双向转发检测,交换与QoS,用于快速检测链路或转发路径故障
+56,ECMP,等价多路径,交换与QoS,在多条等价路径之间分担流量
+57,MTU,最大传输单元,交换与QoS,排查大报文丢弃时需要核对MTU
+58,jumbo frame,巨型帧,交换与QoS,数据中心网络常使用较大的帧长度
+59,quality of service,服务质量,交换与QoS,用于流量分类和差异化转发
+60,traffic shaping,流量整形,交换与QoS,通过缓存平滑突发流量
+61,traffic policing,流量监管,交换与QoS,对超出约定速率的流量进行处理
+62,DSCP marking,DSCP标记,交换与QoS,用于IP报文的差异化服务标记
+63,queue scheduling,队列调度,交换与QoS,决定不同队列的发送顺序和带宽分配
+64,transmit power,发送光功率,光传输,检查光模块发送方向的光功率
+65,receive power,接收光功率,光传输,确认接收光功率是否处于模块指标范围
+66,optical transceiver,光模块,光传输,核对模块型号速率和波长是否匹配
+67,wavelength,波长,光传输,确认两端光模块波长兼容
+68,fiber attenuation,光纤衰耗,光传输,用于评估光链路损耗
+69,OTDR test,OTDR测试,光传输,用于定位光纤断点和异常损耗
+70,fiber patch cord,光纤跳线,光传输,检查跳纤类型长度和连接状态
+71,fiber splice,光纤熔接,光传输,熔接质量会影响链路损耗
+72,DWDM,密集波分复用,光传输,在一根光纤中承载多个波长
+73,OTN,光传送网,光传输,用于大颗粒业务传送和保护
+74,loss of signal,信号丢失,光传输,LOS告警通常需要检查光路和模块
+75,interface error counter,接口错误计数器,故障处理,检查CRC和输入输出错误计数
+76,packet loss,丢包,故障处理,通过端到端测试确认丢包位置
+77,latency,时延,故障处理,比较端到端时延和各段时延
+78,jitter,时延抖动,故障处理,关注实时业务的时延变化
+79,CRC error,CRC校验错误,故障处理,可能与光路质量或物理连接有关
+80,input error,输入错误,故障处理,检查接口输入方向错误计数
+81,interface flapping,接口震荡,故障处理,描述接口反复Up和Down
+82,alarm correlation,告警关联分析,故障处理,结合时间和拓扑识别根因告警
+83,root cause,根因,故障处理,故障报告中需要明确根本原因
+84,workaround,临时绕行方案,故障处理,在根因修复前恢复或维持业务
+85,service impact,业务影响,故障处理,说明受影响的客户业务和范围
+86,maintenance window,维护窗口,故障处理,提前确认允许操作的时间范围
+87,escalation,升级处理,故障处理,问题超出当前处理权限时升级
+88,packet capture,报文抓包,故障处理,用于分析协议交互和异常报文
+89,traceroute,路由跟踪,故障处理,定位端到端路径和时延跳点
+90,pre-check,操作前检查,工程割接,变更前核对设备状态和业务基线
+91,post-check,操作后检查,工程割接,变更后验证业务和网络状态
+92,change window,变更窗口,工程割接,正式执行变更的批准时间段
+93,method of procedure,操作步骤文档,工程割接,MOP应包含步骤风险和回退条件
+94,cutover,割接,工程割接,将业务或链路切换到新设备或新路径
+95,rollback,回退,工程割接,达到回退条件时恢复原配置或原路径
+96,service migration,业务迁移,工程割接,迁移前需明确割接范围和验证方法
+97,change approval,变更审批,工程割接,执行前取得相关责任方批准
+98,acceptance test,验收测试,工程割接,按验收标准验证功能和性能
+99,maintenance notice,维护通知,工程割接,提前通知客户和相关维护团队
+100,rack elevation,机柜布局图,工程建设,标注设备在机柜中的安装位置
+101,equipment cabinet,设备机柜,工程建设,确认机柜空间承重和散热条件
+102,grounding,接地,工程建设,检查保护接地和接地电阻要求
+103,power redundancy,电源冗余,工程建设,确认双路供电和冗余切换能力
+104,DC power system,直流电源系统,工程建设,核对直流电压容量和保护配置
+105,rectifier,整流模块,工程建设,将交流输入转换为直流输出
+106,battery backup,蓄电池后备供电,工程建设,确认电池容量和后备时长
+107,cable labeling,线缆标签,工程建设,按规范标记两端线缆信息
+108,as-built document,竣工资料,工程建设,记录现场最终安装和配置情况
+109,commissioning,开通调测,工程建设,设备安装后进行功能和业务验证
+110,spine-leaf architecture,Spine-Leaf架构,数据中心,数据中心常见的两层Clos网络架构
+111,leaf switch,Leaf交换机,数据中心,连接服务器并上联Spine设备
+112,spine switch,Spine交换机,数据中心,为Leaf之间提供高速转发
+113,GPU cluster,GPU集群,数据中心,由多台GPU服务器组成的计算集群
+114,RDMA,远程直接内存访问,数据中心,降低主机间数据传输的CPU开销
+115,RoCEv2,基于融合以太网的RDMA第二版,数据中心,在以太网上承载RDMA流量
+116,priority flow control,优先级流量控制,数据中心,PFC用于按优先级暂停以太网流量
+117,explicit congestion notification,显式拥塞通知,数据中心,ECN通过标记反馈网络拥塞
+118,east-west traffic,东西向流量,数据中心,描述数据中心内部服务器之间的流量
+119,out-of-band management,带外管理,数据中心,通过独立管理网络访问设备
+120,incident bridge,故障协调会议,现场沟通,用于多团队实时协同处理重大故障
+121,status update,状态更新,现场沟通,定期向客户和项目团队同步进展
+122,estimated time of restoration,预计恢复时间,现场沟通,向客户说明预计业务恢复时间
+123,action item,待办事项,现场沟通,明确任务内容负责人和完成时间
+124,acceptance sign-off,验收签字确认,现场沟通,由客户或项目责任方确认验收结果
