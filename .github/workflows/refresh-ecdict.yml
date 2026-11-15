@@ -1,0 +1,64 @@
+name: Refresh open English-Chinese dictionary
+
+on:
+  push:
+    paths:
+      - ".github/workflows/refresh-ecdict.yml"
+      - "scripts/build_wordbank.py"
+      - "curated/field_english_professional.csv"
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 1 * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-open-dictionary
+  cancel-in-progress: false
+
+jobs:
+  refresh-wordbank:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout Field English wordbank
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Test the wordbank builder
+        run: python -m unittest discover -s tests -p "test_*.py" -v
+
+      - name: Download upstream ECDICT
+        run: |
+          curl --fail --location --retry 3 --retry-delay 3 \
+            --output "$RUNNER_TEMP/ecdict.csv" \
+            https://raw.githubusercontent.com/skywind3000/ECDICT/master/ecdict.csv
+          test -s "$RUNNER_TEMP/ecdict.csv"
+          ls -lh "$RUNNER_TEMP/ecdict.csv"
+
+      - name: Build the app-compatible vocabulary
+        run: |
+          python scripts/build_wordbank.py \
+            --source "$RUNNER_TEMP/ecdict.csv" \
+            --curated curated/field_english_professional.csv \
+            --output field_english_words.csv \
+            --manifest manifest.json
+
+      - name: Commit refreshed data
+        run: |
+          if git diff --quiet -- field_english_words.csv manifest.json; then
+            echo "No dictionary changes detected."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add field_english_words.csv manifest.json
+          git commit -m "Refresh ECDICT-derived English-Chinese vocabulary"
+          git push origin HEAD:main
