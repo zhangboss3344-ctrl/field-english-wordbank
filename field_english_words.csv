@@ -349,6 +349,142 @@ index,英文,中文,分类,备注
 347,We are checking the end-to-end path.,我们正在检查端到端路径。,故障处理口语,用于说明正在开展路径排查。
 348,change advisory board (CAB),变更咨询委员会,工程割接,负责评审和批准重要IT或网络变更的组织；例：The change request must be approved by the CAB.
 349,network change request,网络变更申请,工程割接,记录变更目的、影响范围、实施步骤、风险和回退方案的申请。
+350,address family,地址族,路由协议,BGP/MP-BGP 中区分 IPv4、IPv6、VPN 等路由的逻辑类型
+351,peer group,对等体组,路由协议,将多个 BGP 邻居应用相同策略以减少重复配置
+352,route advertisement,路由通告,路由协议,The route is advertised to the peer.
+353,route origination,路由始发,路由协议,描述设备将本地路由注入路由协议的过程
+354,route dampening,路由震荡抑制,路由协议,用于抑制频繁震荡的路由，需关注抑制阈值
+355,extended community,扩展团体属性,路由协议,常用于 VPN route-target 等扩展路由属性
+356,large community,大型团体属性,路由协议,由三个 32 位字段组成的 BGP 社区属性
+357,multi-exit discriminator (MED),多出口区分属性（MED）,路由协议,向相邻 AS 建议优选的入方向路径
+358,next-hop-self,下一跳自属性,路由协议,将通告路由的下一跳改为本设备地址
+359,soft reset,软重置,路由协议,重新应用策略而尽量不重建 BGP TCP 会话
+360,hard reset,硬重置,路由协议,重建邻居会话，可能引起路由短暂撤销
+361,inbound policy,入方向策略,路由协议,控制从邻居接收的路由及其属性
+362,outbound policy,出方向策略,路由协议,控制向邻居发布的路由及其属性
+363,recursive next-hop resolution,下一跳递归解析,路由协议,检查下一跳是否能通过其他路由解析到出接口
+364,link-state database (LSDB),链路状态数据库（LSDB）,路由协议,核对两端 LSDB 是否同步
+365,link-state advertisement (LSA),链路状态通告（LSA）,路由协议,OSPF 用于描述拓扑和路由信息的通告
+366,area border router (ABR),区域边界路由器（ABR）,路由协议,连接多个 OSPF 区域并维护区域间路由
+367,autonomous system boundary router (ASBR),自治系统边界路由器（ASBR）,路由协议,将外部路由引入 OSPF 域
+368,equal-cost multipath (ECMP),等价多路径（ECMP）,路由协议,将流量分担到多个等价下一跳
+369,default route origination,默认路由生成,路由协议,向邻居或指定区域发布默认路由
+370,MPLS label stack,MPLS标签栈,MPLS/SRv6,一个 MPLS 报文可携带多个标签并按栈顺序处理
+371,label imposition,标签压入,MPLS/SRv6,在报文进入 MPLS 转发域时压入标签
+372,segment routing,段路由,MPLS/SRv6,通过有序段列表指导报文经过指定路径
+373,SRv6 SID,SRv6段标识,MPLS/SRv6,编码定位器、功能及参数等信息的 IPv6 地址
+374,SRv6 function,SRv6功能字段,MPLS/SRv6,标识 SID 对应的转发或服务处理行为
+375,End.X behavior,End.X行为,MPLS/SRv6,将报文转发到指定邻接链路
+376,End.DT4 behavior,End.DT4行为,MPLS/SRv6,解封装后在指定 IPv4 VRF 中查表转发
+377,End.DT6 behavior,End.DT6行为,MPLS/SRv6,解封装后在指定 IPv6 VRF 中查表转发
+378,path computation element (PCE),路径计算单元（PCE）,MPLS/SRv6,根据拓扑和约束计算显式路径
+379,microloop avoidance,微环路避免,MPLS/SRv6,降低 IGP 收敛过程中短暂转发环路的风险
+380,traffic steering,流量引导,MPLS/SRv6,将指定业务流量导向目标隧道或策略路径
+381,Ethernet segment identifier (ESI),以太网段标识符（ESI）,EVPN/VXLAN,标识 EVPN 多归场景中的以太网段
+382,designated forwarder election,指定转发者选举（DF选举）,EVPN/VXLAN,决定多归接入场景中负责转发 BUM 流量的 PE
+383,all-active multihoming,全活多归,EVPN/VXLAN,多个 PE 同时转发同一以太网段的流量
+384,single-active multihoming,单活多归,EVPN/VXLAN,同一以太网段在同一时刻仅由一个 PE 转发
+385,MAC/IP advertisement route (Type 2),MAC/IP通告路由（Type 2）,EVPN/VXLAN,通告 MAC 地址及可选的 IP 地址信息
+386,inclusive multicast route (Type 3),包含组播路由（Type 3）,EVPN/VXLAN,用于发现 VTEP 并建立 BUM 复制关系
+387,Ethernet A-D route (Type 1),以太网自动发现路由（Type 1）,EVPN/VXLAN,用于以太网段自动发现和多归保护
+388,IP prefix route (Type 5),IP前缀路由（Type 5）,EVPN/VXLAN,在 EVPN 中发布三层 IP 前缀
+389,ARP suppression,ARP抑制,EVPN/VXLAN,利用控制平面学习的信息减少广播 ARP 请求
+390,ND suppression,邻居发现抑制,EVPN/VXLAN,利用控制平面信息减少 IPv6 ND 广播或组播请求
+391,integrated routing and bridging (IRB),集成路由与桥接（IRB）,EVPN/VXLAN,在二层桥接与三层路由之间转发流量
+392,symmetric IRB,对称式IRB,EVPN/VXLAN,源端和目的端 VTEP 均通过三层 VNI 转发
+393,asymmetric IRB,非对称式IRB,EVPN/VXLAN,源端 VTEP 需要具备目的网段的二层转发信息
+394,head-end replication,头端复制,EVPN/VXLAN,由入口 VTEP 分别复制 BUM 报文给远端 VTEP
+395,split horizon,水平分割,EVPN/VXLAN,防止从同一以太网段学习的流量再次回送该段
+396,traffic classification,流量分类,交换与QoS,根据 ACL、五元组或优先级字段识别业务流
+397,congestion avoidance,拥塞避免,交换与QoS,在队列完全耗尽前主动管理拥塞
+398,weighted fair queuing (WFQ),加权公平队列（WFQ）,交换与QoS,按权重分配不同业务队列的带宽
+399,strict priority queue,严格优先级队列,交换与QoS,优先调度高优先级业务，需防止低优先级饥饿
+400,priority flow control (PFC),优先级流量控制（PFC）,交换与QoS,按优先级暂停以太网流量，常见于无损数据中心网络
+401,explicit congestion notification (ECN),显式拥塞通知（ECN）,交换与QoS,通过报文标记向端系统反馈网络拥塞
+402,queue depth,队列深度,交换与QoS,表示等待调度的数据包或字节数量
+403,packet drop counter,丢包计数器,交换与QoS,结合接口和队列维度定位丢包位置
+404,loss of signal (LOS),信号丢失（LOS）,光传输,光模块或光纤链路无有效接收信号时产生的告警
+405,loss of frame (LOF),帧丢失（LOF）,光传输,接收端无法正确识别帧结构时产生的告警
+406,forward error correction (FEC),前向纠错（FEC）,光传输,通过冗余编码纠正传输过程中出现的部分误码
+407,insertion loss,插入损耗,光传输,器件或连接点接入链路后产生的功率损耗
+408,return loss,回波损耗,光传输,衡量反射光相对于入射光的衰减程度
+409,optical time-domain reflectometer (OTDR),光时域反射仪（OTDR）,光传输,用于定位光纤断点、熔接点和异常损耗
+410,OTDR trace,OTDR曲线,光传输,通过反射和散射曲线分析光纤链路事件
+411,patch cord,跳纤,光传输,核对跳纤类型、长度、端口和标签
+412,wavelength division multiplexing (WDM),波分复用（WDM）,光传输,在同一根光纤上传输多个不同波长的光信号
+413,optical transport network (OTN),光传送网（OTN）,光传输,提供高容量、可管理的光传送承载网络
+414,optical power budget,光功率预算,光传输,核算发射功率、链路损耗和接收灵敏度余量
+415,receive sensitivity,接收灵敏度,光传输,接收端能够正确解调信号的最低光功率要求
+416,remote direct memory access (RDMA),远程直接内存访问（RDMA）,数据中心,允许主机在低 CPU 开销下直接访问远端内存
+417,RDMA over Converged Ethernet (RoCE),基于融合以太网的RDMA（RoCE）,数据中心,在以太网网络中承载 RDMA 流量
+418,network interface card (NIC),网络接口卡（NIC）,数据中心,服务器与网络之间的数据收发接口
+419,top-of-rack switch (ToR),机架顶部交换机（ToR）,数据中心,连接同一机架服务器并上联数据中心网络
+420,data center interconnect (DCI),数据中心互联（DCI）,数据中心,连接不同数据中心或园区机房的网络
+421,GPU fabric,GPU互联网络,数据中心,为 GPU 节点和集群通信提供低时延、高带宽网络
+422,precision time protocol (PTP),精确时间协议（PTP）,数据中心,用于设备间高精度时钟同步
+423,cyclic redundancy check errors (CRC),循环冗余校验错误（CRC）,故障处理,检查物理链路、光模块、线缆和两端协商参数
+424,input errors,入方向错误计数,故障处理,结合 CRC、丢弃和帧错误定位接收方向问题
+425,packet reordering,报文乱序,故障处理,检查多路径负载分担、链路时延和端系统处理
+426,blackhole route,黑洞路由,故障处理,流量被路由到无有效转发路径的位置
+427,congestion hotspot,拥塞热点,故障处理,定位流量集中导致的局部链路或队列拥塞
+428,management plane,管理平面,故障处理,负责设备配置、监控、日志和运维访问
+429,service impact assessment,业务影响评估,故障处理,确认受影响客户、业务、区域和持续时间
+430,traffic diversion,流量引流,故障处理,将业务流量切换到备用链路或其他可用路径
+431,implementation plan,实施方案,工程割接,说明变更步骤、责任人、时间和验证方式
+432,method of procedure (MOP),操作步骤书（MOP）,工程割接,详细记录变更前检查、实施、验证及回退步骤
+433,site acceptance test (SAT),现场验收测试（SAT）,工程建设,在客户现场验证设备和系统是否满足要求
+434,factory acceptance test (FAT),工厂验收测试（FAT）,工程建设,设备交付前在工厂环境进行验收
+435,as-built documentation,竣工文档,工程建设,记录最终实际安装、配置、布线和拓扑状态
+436,Please share the command output.,请提供命令输出。,故障处理口语,用于远程排障时请求对方提供设备命令结果
+437,Could you confirm the far-end interface status.,请确认对端接口状态。,故障处理口语,排查链路问题时同时核对本端和对端
+438,The issue is intermittent.,这个问题是间歇性出现的。,故障处理口语,描述无法稳定复现的故障现象
+439,The fault is reproducible.,这个故障可以稳定复现。,故障处理口语,说明已找到稳定复现故障的方法
+440,We have isolated the issue to the uplink.,我们已将问题定位到上联链路。,故障处理口语,汇报当前故障定位范围
+441,Please provide the alarm ID and timestamp.,请提供告警编号和发生时间。,故障处理口语,收集告警证据时使用
+442,We need to collect the logs before rebooting.,重启前需要先收集日志。,故障处理口语,避免重启导致关键故障证据丢失
+443,The route is missing from the routing table.,路由表中缺少这条路由。,故障处理口语,描述路由未生成或未成功学习
+444,The prefix is being filtered by the import policy.,该前缀被入方向策略过滤了。,故障处理口语,说明路由未被接收的策略原因
+445,The next hop is unreachable.,下一跳不可达。,故障处理口语,描述递归下一跳解析或底层连通性异常
+446,Traffic is taking an unexpected path.,流量走了非预期路径。,故障处理口语,描述选路结果与设计不一致
+447,There is an MTU mismatch between the two devices.,两台设备之间存在MTU不匹配。,故障处理口语,用于定位大报文丢包或隧道业务异常
+448,We need to run an OTDR test.,我们需要进行OTDR测试。,故障处理口语,申请通过 OTDR 定位光纤链路异常
+449,We are monitoring the link for stability.,我们正在持续观察链路稳定性。,故障处理口语,故障恢复后的观察阶段使用
+450,Let's compare the configurations on both ends.,我们来对比两端的配置。,故障处理口语,排查两端配置不一致问题
+451,We need a joint troubleshooting session.,我们需要安排联合故障排查。,故障处理口语,需要客户、运营商或设备厂家共同定位时使用
+452,The incident has been escalated to the vendor.,该故障已经升级给设备厂家处理。,故障处理口语,说明故障已进入厂家支持流程
+453,The estimated time of restoration is two hours.,预计两小时内恢复业务。,故障处理口语,向客户提供预计恢复时间，需基于实际评估
+454,Please do not reboot the device before approval.,未经批准请不要重启设备。,故障处理口语,避免未经授权执行高风险操作
+455,We will provide an update every thirty minutes.,我们每三十分钟更新一次进展。,现场沟通,约定故障期间的沟通频率
+456,The change request is still pending approval.,变更申请仍在等待审批。,工程割接口语,说明暂时不能开始实施的原因
+457,We will execute the change in two stages.,我们将分两个阶段实施变更。,工程割接口语,说明分阶段变更计划
+458,We will roll back if the service impact exceeds the agreed threshold.,如果业务影响超过约定阈值，我们将执行回退。,工程割接口语,提前说明回退触发条件
+459,All post-checks are within the acceptance threshold.,所有后检查指标均在验收阈值范围内。,工程割接口语,割接完成后汇报验证结果
+460,The maintenance window has been extended.,维护窗口已经延长。,工程割接口语,通知维护时间调整
+461,The cutover is complete.,割接已经完成。,工程割接口语,正式汇报割接结束
+462,The customer has signed off the test report.,客户已经签署测试报告。,工程建设口语,确认客户验收签字完成
+463,Please verify the patching against the port map.,请根据端口表核对跳纤连接。,工程建设口语,现场布线核查时使用
+464,The cable labels do not match the design.,线缆标签与设计不一致。,工程建设口语,指出现场布线标识问题
+465,The site is ready for commissioning.,现场已具备开通调试条件。,工程建设口语,设备安装和环境检查完成后使用
+466,We need to align the configuration with the low-level design.,我们需要使配置与详细设计保持一致。,工程建设口语,核对实施配置是否符合 LLD
+467,The as-built document must reflect the final cabling.,竣工文档必须反映最终布线情况。,工程建设口语,要求交付资料与现场实际一致
+468,The acceptance test failed due to packet loss.,验收测试因丢包未通过。,工程建设口语,说明验收失败的具体原因
+469,The GPU nodes cannot establish RoCE connectivity.,GPU节点无法建立RoCE连通性。,故障处理口语,智算中心网络排障时使用
+470,PFC pause frames are increasing on the uplink.,上联接口的PFC暂停帧正在增加。,故障处理口语,排查无损网络拥塞和流控异常
+471,We need to check the lossless queue counters.,我们需要检查无损队列计数器。,故障处理口语,定位 RoCE 网络丢包或拥塞问题
+472,The leaf-spine fabric is operating normally.,Leaf-Spine网络运行正常。,数据中心,向项目团队汇报数据中心网络状态
+473,The link is up but the routing protocol is down.,链路状态为Up，但路由协议未建立。,故障处理口语,区分物理层正常与协议层异常
+474,The physical layer is stable. The BGP session is not established.,物理层稳定。BGP会话尚未建立。,故障处理口语,将排查范围从物理链路转向协议配置
+475,Please confirm the service impact before we proceed.,继续操作前请确认业务影响。,现场沟通,高风险操作前确认业务影响范围
+476,We need customer approval before proceeding.,继续实施前需要客户批准。,现场沟通,强调变更授权流程
+477,The rollback criteria have been met.,已经达到回退条件。,工程割接口语,通知团队满足预先定义的回退触发条件
+478,The configuration has been backed up.,配置已经完成备份。,工程割接口语,变更前确认配置备份完成
+479,The new route is visible on the peer device.,对端设备已经能够看到新路由。,故障处理口语,验证路由通告是否成功
+480,The SR policy is steering traffic as expected.,SR策略正在按预期引导流量。,故障处理口语,验证 SR Policy 的实际转发路径
+481,The EVPN Type-5 route is missing.,EVPN Type-5路由缺失。,故障处理口语,定位 EVPN 三层前缀发布或接收问题
+482,The VTEP is not reachable.,VTEP不可达。,故障处理口语,检查 underlay 连通性及 VTEP 地址路由
+483,The DF election is unstable.,DF选举不稳定。,故障处理口语,排查 EVPN 多归场景的 DF 选举变化
+484,The link aggregation is not distributing traffic evenly.,链路聚合没有均衡分担流量。,交换与QoS,检查哈希算法、成员链路状态和流量分布
+485,The acceptance report is ready for your review.,验收报告已准备好，请审阅。,工程建设口语,提交交付资料供客户审核
 100000,the,art. 那,考试英语,"音标: ðә；英文释义: v. i. See Thee.\ndefinite article. A word placed before nouns to limit or\n individualize their meaning.\nadv. By that; by how much; by so much; on that account; -- used\n before comparatives; as, the longer we continue in sin, the more\n difficult it is to reform."
 100001,be,"v. 是, 表示, 在\n[计] 后端, 总线允许",考试英语,"音标: bi:；英文释义: v. have the quality of being; (copula, used with an adjective or a predicate noun)\nv. be identical to; be someone or something\nv. occupy a certain position or area; be somewhere\nv. happen, occur, take place; this was during the visit to my parents' house""；词形变化: p:was/3:is/d:been/i:being"
 100002,and,"conj. 和, 与\n[计] 与",考试英语,"音标: ænd；英文释义: conj. A particle which expresses the relation of connection or\n addition. It is used to conjoin a word with a word, a clause with a\n clause, or a sentence with a sentence.\nconj. In order to; -- used instead of the infinitival to,\n especially after try, come, go.\nconj. It is sometimes, in old songs, a mere expletive.\nconj. If; though. See An, conj."
