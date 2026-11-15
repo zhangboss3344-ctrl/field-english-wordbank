@@ -12,7 +12,7 @@ Field English 的公开词库数据源。Android 客户端通过 HTTPS 读取 `m
 1. **Field English 自建专业词库**：数通路由协议、MPLS/SRv6、EVPN/VXLAN、交换与 QoS、光传输、故障处理、工程割接、机房建设、数据中心和现场沟通。
 2. **ECDICT 高频英汉词库**：从上游公开数据中按词频、Oxford 标记和考试标签筛选，最多 15,000 条，提供中文释义、音标、词性、英文释义和词形信息。
 
-当前 350 条自建专业词汇单独保存在 `curated/field_english_professional.csv`，重点覆盖运营商数通与核心网、BGP/OSPF/IS-IS、MPLS/SRv6、EVPN/VXLAN、数据中心与GPU集群、网络故障定位、工程建设、割接验收及海外现场沟通。后续优先围绕真实工程场景持续扩充。发布文件 `field_english_words.csv` 由脚本生成，不要直接把它当作人工维护源文件。
+当前 486 条自建专业词汇单独保存在 `curated/field_english_professional.csv`，重点覆盖运营商数通与核心网、BGP/OSPF/IS-IS、MPLS/SRv6、EVPN/VXLAN、QoS、光传输、数据中心与GPU/RoCE集群、网络故障定位、工程建设、割接验收及海外现场沟通。新增内容优先采用真实工程中可直接使用的术语和完整表达句。发布文件 `field_english_words.csv` 由脚本生成，不要直接把它当作人工维护源文件。
 
 ## 开放数据来源与许可
 
