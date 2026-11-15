@@ -45,9 +45,17 @@ class BuildWordbankTests(unittest.TestCase):
             self.assertIn("hello", words)
             self.assertIn("cloud computing", words)
             self.assertNotIn("rareword", words)
+            with CURATED.open(encoding="utf-8-sig", newline="") as curated_file:
+                curated_words = {
+                    row["英文"].strip().casefold()
+                    for row in csv.DictReader(curated_file)
+                    if row.get("英文", "").strip()
+                }
             self.assertEqual(len(words), len(rows))
-            self.assertIn("BGP peer", {row["英文"] for row in rows})
-            self.assertEqual(len(rows), 129)
+            self.assertTrue(curated_words.issubset(words))
+            self.assertIn("BGP peer", words)
+            self.assertEqual(len(words - curated_words), 4)
+            self.assertIn("The BGP session is established.", words)
 
             built_manifest = json.loads(manifest.read_text(encoding="utf-8"))
             self.assertEqual(built_manifest["content"]["count"], len(rows))
