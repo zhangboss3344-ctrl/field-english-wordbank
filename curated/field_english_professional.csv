@@ -347,3 +347,5 @@ index,英文,中文,分类,备注
 345,The link utilization is approaching the threshold.,链路利用率正在接近阈值。,故障处理口语,用于提前提示容量风险。
 346,The BGP routes have converged.,BGP路由已经收敛。,故障处理口语,用于确认路由状态趋于稳定。
 347,We are checking the end-to-end path.,我们正在检查端到端路径。,故障处理口语,用于说明正在开展路径排查。
+348,change advisory board (CAB),变更咨询委员会,工程割接,负责评审和批准重要IT或网络变更的组织；例：The change request must be approved by the CAB.
+349,network change request,网络变更申请,工程割接,记录变更目的、影响范围、实施步骤、风险和回退方案的申请。
