@@ -2,10 +2,10 @@
   "schema_version": 1,
   "app": "Field English",
   "channel": "stable",
-  "version": "1.0.0",
-  "version_code": 1,
-  "updated_at": "2026-11-15T00:00:00Z",
-  "description": "首发专业数通工程英语词库",
+  "version": "1.0.1",
+  "version_code": 2,
+  "updated_at": "2026-11-15T17:11:28Z",
+  "description": "Field English 工程专业词库 + ECDICT 高频英汉词库",
   "locale": "zh-CN",
   "content": {
     "type": "csv",
@@ -20,9 +20,9 @@
       "分类",
       "备注"
     ],
-    "count": 125,
-    "size_bytes": 10490,
-    "sha256": "8d67be9f32605da5a4b0cc1c4d2019f9915cd7d160f9ba1aae587e2000aacd88"
+    "count": 15125,
+    "size_bytes": 4009789,
+    "sha256": "fd6bea2fba26f5f2798ead56cf8bfe29b3542c4e9258fc3463c5a3c24f37f88c"
   },
   "update_policy": {
     "check_on_start": true,
@@ -35,5 +35,18 @@
     "preserve_learning_progress": true,
     "offline_fallback": true
   },
-  "minimum_client_version": "1.0.0"
+  "minimum_client_version": "1.0.0",
+  "sources": [
+    {
+      "name": "ECDICT",
+      "repository": "https://github.com/skywind3000/ECDICT",
+      "license": "MIT (upstream repository license; see licenses/ECDICT-MIT-LICENSE.txt)",
+      "selection": "最多 15,000 条高频词，按 BNC/当代词频、Oxford 标记及考试标签筛选"
+    },
+    {
+      "name": "Field English curated professional vocabulary",
+      "path": "curated/field_english_professional.csv",
+      "license": "Field English project content"
+    }
+  ]
 }
