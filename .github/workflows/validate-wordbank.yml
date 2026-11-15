@@ -1,0 +1,65 @@
+name: Validate Field English wordbank
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/validate-wordbank.yml"
+      - "curated/**"
+      - "scripts/**"
+      - "tests/**"
+      - "manifest.json"
+      - "field_english_words.csv"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/validate-wordbank.yml"
+      - "curated/**"
+      - "scripts/**"
+      - "tests/**"
+      - "manifest.json"
+      - "field_english_words.csv"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run wordbank builder tests
+        run: python -m unittest discover -s tests -p "test_*.py" -v
+
+      - name: Validate curated vocabulary
+        run: |
+          python - <<'PY'
+          import csv
+          import unicodedata
+          from pathlib import Path
+
+          path = Path("curated/field_english_professional.csv")
+          expected = ["index", "英文", "中文", "分类", "备注"]
+          with path.open("r", encoding="utf-8-sig", newline="") as f:
+              reader = csv.DictReader(f)
+              assert reader.fieldnames == expected, reader.fieldnames
+              rows = list(reader)
+
+          def norm(value):
+              return " ".join(unicodedata.normalize("NFKC", value or "").split()).casefold()
+
+          keys = [norm(row["英文"]) for row in rows]
+          assert all(keys), "Empty English headword found"
+          assert len(keys) == len(set(keys)), "Duplicate English headword found"
+          assert all((row["中文"] or "").strip() for row in rows), "Empty Chinese translation found"
+          assert all((row["分类"] or "").strip() for row in rows), "Empty category found"
+          assert len(rows) <= 19999, f"Curated vocabulary exceeds Android row limit: {len(rows)}"
+          print(f"Validated {len(rows)} curated professional entries.")
+          PY
